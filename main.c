@@ -3,5 +3,5 @@
 
 int main()
 {
-	ft_printf("testeeee %s %d %i \n", "a");
+	ft_printf("testeeee %s %s %i \n", "amor", "credo");
 }
