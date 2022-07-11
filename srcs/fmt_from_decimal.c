@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fmt_from_string.c                                  :+:      :+:    :+:   */
+/*   fmt_from_decimal.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astaroth </var/spool/mail/astaroth>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/04 22:23:56 by astaroth          #+#    #+#             */
-/*   Updated: 2022/07/11 16:36:26 by astaroth         ###   ########.fr       */
+/*   Created: 2022/07/11 16:58:15 by astaroth          #+#    #+#             */
+/*   Updated: 2022/07/11 17:00:12 by astaroth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../include/ft_printf.h"
 
-char	*fmt_from_string(char *s)
+char	*fmt_from_decimal(int nbr)
 {
-	char	*str;
-
-	str = ft_strdup(s);
-	return (str);
+	return (ft_itoa(nbr));
 }
