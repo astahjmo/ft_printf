@@ -6,7 +6,7 @@
 /*   By: astaroth </var/spool/mail/astaroth>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 20:02:11 by astaroth          #+#    #+#             */
-/*   Updated: 2022/07/11 12:36:39 by astaroth         ###   ########.fr       */
+/*   Updated: 2022/07/11 22:03:26 by astaroth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 int	ft_printf(const char *s, ...)
 {
 	va_list		ap;
+	int len;
 
 	if (!s)
 		return (0);
 	va_start(ap, s);
-	parser(s, ap);
+	len = parser(s, ap);
 	va_end(ap);
-	return (0);
+	return (len);
 }
