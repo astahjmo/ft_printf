@@ -6,11 +6,11 @@
 #    By: astaroth </var/spool/mail/astaroth>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/11 17:46:44 by astaroth          #+#    #+#              #
-#    Updated: 2022/07/11 20:14:10 by astaroth         ###   ########.fr        #
+#    Updated: 2022/07/11 21:52:53 by astaroth         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= printf.a
+NAME		= libftprintf.a
 SRCS		:= fmt_from_decimal.c \
 					fmt_from_pointer.c fmt_from_string.c  parser.c \
 					fmt_from_udecimal.c fmt_from_uhex.c ft_printf.c
@@ -35,12 +35,11 @@ OBJS 		:= $(SRCS:.c=.o)
 all:	$(NAME)
 
 $(NAME): $(OBJS)
-	@ make -C $(LDIR)
-	@ mv $(LDIR)libft.a .
+	@make -C $(LDIR)
 	ar -rsc $(NAME) $(OBJS)
 
 %.o:	$(SDIR)%.c $(INCLUDE)
-	$(CC) $(CFLAGS) -c $<
+	$(CC) $(CFLAGS) -c -I$(INCLUDE) $<
 
 $(ODIR):
 	mkdir -p $@
@@ -51,11 +50,9 @@ clean: $(OBJS)
 
 fclean: 
 	rm -rf $(NAME) $(OBJS)
-	rm libft.a
 	@make fclean -C $(LDIR)
 
 re: fclean all
-
 
 .PHONY: all clean fclean
 

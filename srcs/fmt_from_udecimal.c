@@ -6,12 +6,12 @@
 /*   By: astaroth </var/spool/mail/astaroth>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 17:07:58 by astaroth          #+#    #+#             */
-/*   Updated: 2022/07/11 19:15:32 by astaroth         ###   ########.fr       */
+/*   Updated: 2022/07/11 21:32:19 by astaroth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/ft_printf.h"
 
-static void	ft_fill_array(unsigned long num, char *arr, int size)
+static void	ft_fill_array(unsigned int num, char *arr, int size)
 {
 	if (num != 0)
 	{
