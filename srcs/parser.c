@@ -6,12 +6,11 @@
 /*   By: astaroth </var/spool/mail/astaroth>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 21:41:38 by astaroth          #+#    #+#             */
-/*   Updated: 2022/07/11 17:39:03 by astaroth         ###   ########.fr       */
+/*   Updated: 2022/07/11 22:00:28 by astaroth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
-#include <unistd.h>
 
 static char	*handler_parms(char spec, va_list ap)
 {
