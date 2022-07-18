@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fmt_from_decimal.c                                 :+:      :+:    :+:   */
+/*   fmt_from_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astaroth </var/spool/mail/astaroth>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 16:58:15 by astaroth          #+#    #+#             */
-/*   Updated: 2022/07/11 16:58:15 by astaroth         ###   ########.fr       */
+/*   Created: 2022/07/12 13:31:07 by astaroth          #+#    #+#             */
+/*   Updated: 2022/07/12 16:16:32 by astaroth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-int	fmt_from_decimal(int nbr)
+int		fmt_from_char(char s)
 {
-	char	*str;
-	int		len;
-
-	str = ft_itoa(nbr);
-	len = ft_strlen(str);
-	ft_putstr_fd(str, STDOUT_FILENO);
-	free(str);
-	return (len);
+	ft_putchar_fd(s, STDOUT_FILENO);
+	return (1);
 }

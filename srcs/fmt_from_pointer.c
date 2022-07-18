@@ -11,38 +11,25 @@
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
+#include <unistd.h>
 
-static void	ft_fill_array(u_long num, char *arr, int size)
-{
-	while (num >= 16)
-	{
-		arr[size] = MASK_HEX[(num % 16)];
-		num /= 16;
-		size--;
-	}
-	arr[size] = MASK_HEX[(num % 16)];
-}
-
-char	*fmt_from_pointer(void *pointer)
+int	fmt_from_pointer(void *pointer)
 {
 	u_long	pp;
-	u_long	aux;
-	size_t	int_size;
+	size_t	len;
 	char	*str;
 
-	pp = (unsigned long)pointer;
-	aux = pp;
-	int_size = 0;
-	while (aux >= 16)
+
+	pp = (unsigned long) pointer;
+	if (!(pp))
 	{
-		aux /= 16;
-		int_size++;
+		ft_putstr_fd("(nil)", STDOUT_FILENO);
+		return (5);
 	}
-	int_size += 4;
-	str = malloc((sizeof(char) * int_size));
-	str[int_size -1] = '\0';
-	str[0] = '0';
-	str[1] = 'x';
-	ft_fill_array(pp, str, (int_size - 2));
-	return (str);
+	str = ft_ubase(pp, 16);
+	len = ft_strlen(str);
+	ft_putstr_fd("0x", STDOUT_FILENO);
+	ft_putstr_fd(str, STDOUT_FILENO);
+	free(str);
+	return (len + 2);
 }

@@ -10,11 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/ft_printf.h"
+#include <unistd.h>
 
-char	*fmt_from_string(char *s)
+int	fmt_from_string(char *s)
 {
-	char	*str;
+	int		len;
 
-	str = ft_strdup(s);
-	return (str);
+	if(!s)
+	{
+		ft_putstr_fd("(null)", STDOUT_FILENO);
+		return (6);
+	}
+	len = ft_strlen(s);
+	ft_putstr_fd(s, STDOUT_FILENO);
+	return (len);
 }

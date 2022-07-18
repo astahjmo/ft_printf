@@ -6,13 +6,15 @@
 /*   By: astaroth </var/spool/mail/astaroth>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 21:41:38 by astaroth          #+#    #+#             */
-/*   Updated: 2022/07/11 22:00:28 by astaroth         ###   ########.fr       */
+/*   Updated: 2022/07/12 18:28:26 by astaroth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
+#include <stdarg.h>
+#include <unistd.h>
 
-static char	*handler_parms(char spec, va_list ap)
+static int	handler_parms(char spec, va_list ap)
 {
 	if (spec == 's')
 		return (fmt_from_string(va_arg(ap, char *)));
@@ -28,28 +30,31 @@ static char	*handler_parms(char spec, va_list ap)
 		return (fmt_from_decimal(va_arg(ap, int)));
 	else if (spec == 'd')
 		return (fmt_from_decimal(va_arg(ap, int)));
+	else if (spec == 'c')
+		return (fmt_from_char(va_arg(ap, int)));
 	return (0);
 }
 
 int	parser(const char *s, va_list ap)
 {
 	int		index;
-	char	*parm;
+	int		len;
 
 	index = -1;
+	len = 0;
 	while (s[++index])
 	{
-		if (s[index] == '%' && ft_strchr(MASK_CONVERSION, s[index + 1]))
+		if (s[index] == '%' && ft_strchr(MASK_CONVERSION,s[index + 1]))
 		{
-			parm = handler_parms(s[index +1], ap);
-			ft_putstr_fd(parm, STDOUT_FILENO);
-			free(parm);
+			len += handler_parms(s[index + 1], ap);
 			index++;
+			continue ;
 		}
-		else if (s[index] == '%' && s[index++] == 'c')
-			ft_putchar_fd(s[index], STDOUT_FILENO);
+		else if (s[index] == '%' && s[index + 1] == '%')
+			ft_putchar_fd(s[index++], STDOUT_FILENO);
 		else
 			ft_putchar_fd(s[index], STDOUT_FILENO);
+		len++;
 	}
-	return (index);
+	return (len);
 }

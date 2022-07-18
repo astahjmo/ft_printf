@@ -11,35 +11,20 @@
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
-
-static void	ft_fill_array(u_long num, char *arr, int size)
+ 
+int	 fmt_from_lhex(unsigned int nb)
 {
-	while (num >= 16)
+	char	*hex;
+	int		len;
+
+	len = 0;
+	hex = ft_ithex(nb);
+	while (hex && hex[len])
 	{
-		arr[size] = ft_tolower(MASK_HEX[(num % 16)]);
-		num /= 16;
-		size--;
+		ft_tolower(hex[len]);
+		len++;
 	}
-	arr[size] = ft_tolower(MASK_HEX[(num % 16)]);
-}
-
-char	*fmt_from_lhex(int nb)
-{
-
-	int	aux;
-	size_t	int_size;
-	char	*str;
-
-	aux = nb;
-	int_size = 0;
-	while (aux >= 16)
-	{
-		aux /= 16;
-		int_size++;
-	}
-	int_size += 2;
-	str = malloc((sizeof(char) * int_size));
-	str[int_size -1] = '\0';
-	ft_fill_array(nb, str, (int_size - 2));
-	return (str);
+	ft_putstr_fd(hex, STDOUT_FILENO);
+	free(hex);
+	return (len);
 }
