@@ -16,7 +16,6 @@ SRCS		=  fmt_to_decimal.c \
 				fmt_to_pointer.c fmt_to_string.c  parser.c \
 				fmt_to_udecimal.c ft_printf.c fmt_to_hex.c \
 				fmt_to_char.c
-
 LDIR		= ./lib/
 SDIR 		= ./srcs/
 ODIR		= ./objs/
@@ -24,7 +23,6 @@ INCLUDE		= ./include
 CC			= cc
 CFLAGS		= -Wall -Werror -Wextra
 OBJS 		= $(addprefix $(ODIR), $(SRCS:.c=.o))
-
 
 all:	$(NAME)
 
