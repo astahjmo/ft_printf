@@ -14,17 +14,17 @@
 
 int	fmt_to_pointer(void *pointer)
 {
-	u_long	pp;
+	u_long	aux_p;
 	size_t	len;
 	char	*str;
 
-	pp = (unsigned long) pointer;
-	if (!(pp))
+	aux_p = (unsigned long) pointer;
+	if (!(aux_p))
 	{
 		ft_putstr_fd("(nil)", STDOUT_FILENO);
 		return (5);
 	}
-	str = ft_ubase(pp, 16);
+	str = ft_ubase(aux_p, 16);
 	len = ft_strlen(str);
 	ft_putstr_fd("0x", STDOUT_FILENO);
 	ft_putstr_fd(str, STDOUT_FILENO);
