@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fmt_to_udecimal.c                                :+:      :+:    :+:   */
+/*   fmt_to_udecimal.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astaroth </var/spool/mail/astaroth>        +#+  +:+       +#+        */
+/*   By: johmatos <johmatos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 17:07:58 by astaroth          #+#    #+#             */
-/*   Updated: 2022/07/11 21:32:19 by astaroth         ###   ########.fr       */
+/*   Created: 2022/07/20 23:19:25 by johmatos          #+#    #+#             */
+/*   Updated: 2022/07/20 23:19:26 by johmatos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../include/ft_printf.h"
 
 int	fmt_to_udecimal(unsigned int n)

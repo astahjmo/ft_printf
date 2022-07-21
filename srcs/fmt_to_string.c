@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fmt_to_string.c                                  :+:      :+:    :+:   */
+/*   fmt_to_string.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astaroth </var/spool/mail/astaroth>        +#+  +:+       +#+        */
+/*   By: johmatos <johmatos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/04 22:23:56 by astaroth          #+#    #+#             */
-/*   Updated: 2022/07/11 16:36:26 by astaroth         ###   ########.fr       */
+/*   Created: 2022/07/20 23:19:12 by johmatos          #+#    #+#             */
+/*   Updated: 2022/07/20 23:19:13 by johmatos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../include/ft_printf.h"
 
 int	fmt_to_string(char *s)
