@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include "../include/ft_printf.h"
 
 static void	ft_fill_array(long num, char *arr, int size)
 {

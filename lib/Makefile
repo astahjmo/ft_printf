@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME 		= libft.a
-HEADER 		= libft.h
+HEADER 		= ../include
 CC 			= cc
 CFLAGS 		= -Wall -Werror -Wextra
 SRC 		:= ft_strchr.c ft_isascii.c ft_isascii.c \

@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#define MASK_HEX "0123456789abcdef"
+#include "../include/ft_printf.h"
 
 static void	ft_fill_array(u_long num, char *arr,
 		unsigned long size, unsigned long base)
