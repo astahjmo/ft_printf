@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fmt_from_char.c                                    :+:      :+:    :+:   */
+/*   fmt_to_string.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astaroth </var/spool/mail/astaroth>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/12 13:31:07 by astaroth          #+#    #+#             */
-/*   Updated: 2022/07/12 16:16:32 by astaroth         ###   ########.fr       */
+/*   Created: 2022/07/04 22:23:56 by astaroth          #+#    #+#             */
+/*   Updated: 2022/07/11 16:36:26 by astaroth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "../include/ft_printf.h"
 
-int		fmt_from_char(char s)
+int	fmt_to_string(char *s)
 {
-	ft_putchar_fd(s, STDOUT_FILENO);
-	return (1);
+	int		len;
+
+	if (!s)
+	{
+		ft_putstr_fd("(null)", STDOUT_FILENO);
+		return (6);
+	}
+	len = ft_strlen(s);
+	ft_putstr_fd(s, STDOUT_FILENO);
+	return (len);
 }

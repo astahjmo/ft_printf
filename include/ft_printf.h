@@ -21,11 +21,10 @@
 
 int		ft_printf(const char *str, ...);
 int		parser(const char *s, va_list ap);
-int		fmt_from_decimal(int nbr);
-int		fmt_from_udecimal(unsigned int nbr);
-int		fmt_from_char(char s);
-int		fmt_from_string(char *s);
-int		fmt_from_lhex(unsigned int nb);
-int		fmt_from_uhex(unsigned int nb);
-int		fmt_from_pointer(void *pointer);
+int		fmt_to_decimal(int nbr);
+int		fmt_to_udecimal(unsigned int nbr);
+int		fmt_to_char(char s);
+int		fmt_to_string(char *s);
+int		fmt_to_hex(unsigned int nb, int is_upper);
+int		fmt_to_pointer(void *pointer);
 #endif

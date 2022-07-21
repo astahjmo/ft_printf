@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fmt_from_string.c                                  :+:      :+:    :+:   */
+/*   fmt_to_pointer.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astaroth </var/spool/mail/astaroth>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/04 22:23:56 by astaroth          #+#    #+#             */
-/*   Updated: 2022/07/11 16:36:26 by astaroth         ###   ########.fr       */
+/*   Created: 2022/07/11 14:05:31 by astaroth          #+#    #+#             */
+/*   Updated: 2022/07/11 16:32:05 by astaroth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../include/ft_printf.h"
-#include <unistd.h>
 
-int	fmt_from_string(char *s)
+int	fmt_to_pointer(void *pointer)
 {
-	int		len;
+	u_long	pp;
+	size_t	len;
+	char	*str;
 
-	if(!s)
+	pp = (unsigned long) pointer;
+	if (!(pp))
 	{
-		ft_putstr_fd("(null)", STDOUT_FILENO);
-		return (6);
+		ft_putstr_fd("(nil)", STDOUT_FILENO);
+		return (5);
 	}
-	len = ft_strlen(s);
-	ft_putstr_fd(s, STDOUT_FILENO);
-	return (len);
+	str = ft_ubase(pp, 16);
+	len = ft_strlen(str);
+	ft_putstr_fd("0x", STDOUT_FILENO);
+	ft_putstr_fd(str, STDOUT_FILENO);
+	free(str);
+	return (len + 2);
 }

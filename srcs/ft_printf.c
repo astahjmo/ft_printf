@@ -15,7 +15,7 @@
 int	ft_printf(const char *s, ...)
 {
 	va_list		ap;
-	int len;
+	int			len;
 
 	if (!s)
 		return (0);

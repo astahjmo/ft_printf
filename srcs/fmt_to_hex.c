@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fmt_from_udecimal.c                                :+:      :+:    :+:   */
+/*   fmt_to_lhex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astaroth </var/spool/mail/astaroth>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 17:07:58 by astaroth          #+#    #+#             */
-/*   Updated: 2022/07/11 21:32:19 by astaroth         ###   ########.fr       */
+/*   Created: 2022/07/11 17:31:57 by astaroth          #+#    #+#             */
+/*   Updated: 2022/07/11 17:39:38 by astaroth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../include/ft_printf.h"
 
-int	fmt_from_udecimal(unsigned int n)
+int	fmt_to_hex(unsigned int nb, int is_upper)
 {
-	char	*str;
+	char	*hex;
 	int		len;
 
-	str = ft_ubase(n, 10);
-	len = ft_strlen(str);
-	ft_putstr_fd(str, STDOUT_FILENO);
-	free (str);
+	len = 0;
+	hex = ft_ithex(nb);
+	while (hex && hex[len])
+	{
+		if (is_upper)
+			hex[len] = ft_toupper(hex[len]);
+		len++;
+	}
+	ft_putstr_fd(hex, STDOUT_FILENO);
+	free(hex);
 	return (len);
 }
