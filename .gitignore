@@ -2,4 +2,5 @@ vgcore.*
 *.out
 printfTester/
 main.c
+*.a
 objs/
