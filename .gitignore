@@ -1,6 +1,5 @@
 vgcore.*
 *.out
 printfTester/
-lib/
 main.c
 objs/
