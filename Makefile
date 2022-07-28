@@ -1,26 +1,29 @@
-NAME		= libftprintf.a
-LIBFT 		= libft.a
-SRCS		=  fmt_to_decimal.c \
-				fmt_to_pointer.c fmt_to_string.c  parser.c \
-				fmt_to_udecimal.c ft_printf.c fmt_to_hex.c \
-				fmt_to_char.c
-LDIR		= ./lib/
-SDIR 		= ./srcs/
-ODIR		= ./objs/
-INCLUDE		= ./include
-CC			= cc
-CFLAGS		= -Wall -Werror -Wextra
-OBJS 		= $(addprefix $(ODIR), $(SRCS:.c=.o))
+NAME	= libftprintf.a
+LIBFT 	= libft.a
+VPATH 	= lib srcs
+SRCS	= ft_strchr.c ft_isascii.c \
+		  ft_strlen.c ft_toupper.c ft_itoa.c \
+		  ft_putchar_fd.c ft_putstr_fd.c \
+		  ft_ithex.c ft_ubase.c fmt_to_decimal.c \
+		  fmt_to_pointer.c fmt_to_string.c  parser.c \
+		  fmt_to_udecimal.c ft_printf.c fmt_to_hex.c \
+		  fmt_to_char.c
+
+LDIR	= ./lib/
+SDIR 	= ./srcs/
+ODIR	= ./objs/
+INCLUDE	= ./include
+CC		= cc
+CFLAGS	= -Wall -Werror -Wextra
+OBJS 	= $(addprefix $(ODIR), $(SRCS:.c=.o))
 
 all:	$(NAME)
 
 $(NAME): $(ODIR) $(OBJS)
-	@make -C $(LDIR)
-	@mv $(LDIR)libft.a $(NAME)
 	@ar rcs $(NAME) $(OBJS)
 
-$(ODIR)%.o: $(SDIR)%.c
-	@echo "$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@" 
+$(ODIR)%.o: %.c
+	@echo "$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $(ODIR)" 
 	@$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@
 
 $(ODIR):
@@ -28,11 +31,9 @@ $(ODIR):
 
 clean:
 	@rm -rf $(ODIR)
-	@make clean -C $(LDIR)
 
 fclean: clean
 	@rm -f $(NAME)
-	@make fclean -C $(LDIR)
 
 re: fclean all
 
