@@ -1,5 +1,4 @@
 NAME	= libftprintf.a
-LIBFT 	= libft.a
 VPATH 	= lib srcs
 SRCS	= ft_strchr.c ft_isascii.c \
 		  ft_strlen.c ft_toupper.c ft_itoa.c \
@@ -9,8 +8,6 @@ SRCS	= ft_strchr.c ft_isascii.c \
 		  fmt_to_udecimal.c ft_printf.c fmt_to_hex.c \
 		  fmt_to_char.c
 
-LDIR	= ./lib/
-SDIR 	= ./srcs/
 ODIR	= ./objs/
 INCLUDE	= ./include
 CC		= cc
