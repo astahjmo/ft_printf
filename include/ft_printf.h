@@ -6,13 +6,13 @@
 /*   By: johmatos <johmatos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 21:10:33 by johmatos          #+#    #+#             */
-/*   Updated: 2022/07/28 21:10:35 by johmatos         ###   ########.fr       */
+/*   Updated: 2022/11/10 23:22:54 by johmatos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-# define MASK_CONVERSION "cspdiuxX"
+# define MASK_CONVERSION "cspdiuxXb"
 # define MASK_HEX "0123456789abcdef"
 # include <stdarg.h>
 # include <stdlib.h>
@@ -35,4 +35,6 @@ int		fmt_to_char(char s);
 int		fmt_to_string(char *s);
 int		fmt_to_hex(unsigned int nb, int is_upper);
 int		fmt_to_pointer(void *pointer);
+int		fmt_to_bin(int value);
+
 #endif

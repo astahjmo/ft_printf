@@ -6,7 +6,7 @@ SRCS	= ft_strchr.c ft_isascii.c \
 		  ft_ithex.c ft_ubase.c fmt_to_decimal.c \
 		  fmt_to_pointer.c fmt_to_string.c  parser.c \
 		  fmt_to_udecimal.c ft_printf.c fmt_to_hex.c \
-		  fmt_to_char.c
+		  fmt_to_char.c fmt_to_bin.c
 
 ODIR	= ./objs/
 INCLUDE	= ./include
